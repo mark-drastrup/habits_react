@@ -32,5 +32,111 @@ body {
 }
 
 .navbar__addBtn {
-  color: white
+  color: white;
+  cursor: pointer;
+}
+
+.newhabit {
+  height: 100%;
+}
+
+.newhabit__header {
+  height: 50px;
+  background-color: #3aa7cd;
+  flex: 1;
+}
+
+.newhabit__header__cancel {
+  margin-left: 15px;
+  color:white;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.newhabit__header__save {
+  margin-right: 15px;
+  color:white;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.newhabit__content {
+  flex:12;
+}
+
+.newhabit__inputgroup {
+  height: 100px; 
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.newhabit__title {
+  color: white;
+  opacity: 0.8;
+  margin-left: 15px;
+}
+
+.newhabit__input {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  font-size: 20px;
+}
+
+.newhabit_regularity {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.newhabit_regularity_item {
+  color: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid white;
+  flex: 1;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.newhabit_regularity_item.active {
+  background-color: #3aa7cd
+}
+
+.newhabit__colorpicker {
+  flex: 1;
+  background-color: green;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.newhabit__colorpicker.purple {
+  background-color: #8d5cb2
+}
+
+.newhabit__colorpicker.green {
+  background-color: #61bd68
+}
+
+.newhabit__colorpicker.blue {
+  background-color: #1981bb
+}
+
+.newhabit__colorpicker.red {
+  background-color: #bc4341
+}
+
+.newhabit__colorpicker.cyan {
+  background-color: #17a2b8
+}
+
+.newhabit__colorpicker.active {
+  filter: brightness(100%);
+  border: 2px solid white
+}
+
+.newhabit__colorpicker::before {
+  content: "";
+  display: block;
+  padding-top: 100%
 }

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { connect } from "react-redux";
-import axios from 'axios';
 import HabitList from "./components/HabitList"
+import NewHabit from "./components/NewHabit"
 import Navbar from "./components/Navbar"
 
 class App extends Component {
@@ -11,8 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container-fluid p-0 d-flex flex-column justify-content-between h-100">
-          <div className="row no-gutters">
-            <HabitList></HabitList>
+          <div className="row no-gutters h-100">
+            {this.props.activeView === "habitList" ?
+              <HabitList></HabitList>
+              :
+              <NewHabit></NewHabit>
+            }
           </div>
           <div className="row no-gutters">
             <Navbar></Navbar>
@@ -27,7 +30,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     allHabits: state.allHabits,
-
+    activeView: state.activeView
   };
 };
 
