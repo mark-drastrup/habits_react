@@ -7,7 +7,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.habit {
+  height: 80px;
+  padding-left: 15px;
+}
+
+.habit__title {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.habit__progress {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  opacity: 0.9  ;
+}
+
+.navbar {
+  background-color: #3aa7cd;
+  height: 50px;
+}
+
+.navbar__addBtn {
+  color: white
 }
