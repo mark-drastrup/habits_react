@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import axios from 'axios';
+import moment from "moment";
 
 class NewHabit extends Component {
   submit = async () => {
@@ -9,8 +10,10 @@ class NewHabit extends Component {
       user: "http://localhost:8000/api/users/1/",
       color: this.props.color,
       consecutive: 0,
-      created: new Date(),
-      updated: new Date()
+      total: 1,
+      interval: this.props.interval,
+      created: moment(new Date()).add(2, 'weeks'),
+      updated: moment()
     });
     this.props.resetValues();
   }

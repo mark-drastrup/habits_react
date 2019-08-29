@@ -8,7 +8,7 @@ class Habits extends Component {
     if (this.props.allHabits.length !== 0) {
       habits = this.props.allHabits.map(habit => {
         return (
-          <div className="row habit" key={habit.id} style={{ backgroundColor: habit.color }}>
+          <div className="habit d-flex align-items-center" key={habit.id} style={{ backgroundColor: habit.color }}>
             <div className="col-12 d-flex flex-column justify-content-center align-items-start">
               <span className="habit__title">{habit.name}</span>
               <span className="habit__progress">{habit.consecutive} in a row | Longest streak: 8</span>

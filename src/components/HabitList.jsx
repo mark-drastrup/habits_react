@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import axios from 'axios';
 import Habits from "./Habits"
+import moment from "moment"
 
 class HabitList extends Component {
   async componentDidMount() {
     const habits = await axios("http://localhost:8000/api/habits/");
+    /* console.log(habits.data[4].created)
+    console.log(moment(habits.data[4].created)) */
+    //console.log(moment(habits.data[0].created))
     this.props.fetchHabits(habits)
   }
 
@@ -28,8 +32,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchHabits: async (habits) => {
-      console.log(habits)
+    fetchHabits: (habits) => {
       dispatch({
         type: "FETCH_HABITS",
         data: habits

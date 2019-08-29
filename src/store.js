@@ -55,12 +55,23 @@ const goBack = data => {
   return newAction
 }
 
+const changeStatsView = data => {
+  const newAction = {
+    type: "CHANGE_STATS_VIEW",
+    data: data
+  }
+  return newAction
+}
+
+
+
 const initialState = {
   allHabits: [],
   activeView: "habitList",
   interval: "",
   color: "",
-  inputValue: ""
+  inputValue: "",
+  statsView: "daily"
 }
 
 const reducer = (state = initialState, action) => {
@@ -101,6 +112,11 @@ const reducer = (state = initialState, action) => {
     case "GO_BACK": {
       const copiedState = Object.assign({}, state);
       copiedState.activeView = "habitList";
+      return copiedState;
+    }
+    case "CHANGE_STATS_VIEW": {
+      const copiedState = Object.assign({}, state);
+      copiedState.statsView = action.data;
       return copiedState;
     }
     default: {

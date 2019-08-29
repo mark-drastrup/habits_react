@@ -9,7 +9,6 @@ body {
 
 .habit {
   height: 80px;
-  padding-left: 15px;
 }
 
 .habit__title {
@@ -31,7 +30,7 @@ body {
   height: 50px;
 }
 
-.navbar__addBtn {
+.navbar__menuitem {
   color: white;
   cursor: pointer;
 }
@@ -139,4 +138,32 @@ body {
   content: "";
   display: block;
   padding-top: 100%
+}
+
+.stats__header {
+  height: 50px;
+  background-color: #3aa7cd;
+  flex: 1;
+}
+
+.stats__header__daily {
+  margin-left: 15px;
+  color:white;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.stats__header__weekly {
+  color: white
+}
+
+.stats__header__monthly {
+  margin-right: 15px;
+  color:white;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.stats__content {
+  flex:12;
 }
