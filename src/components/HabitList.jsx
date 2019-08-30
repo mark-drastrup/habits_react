@@ -2,10 +2,18 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import axios from 'axios';
 import Habits from "./Habits"
+import moment from "moment"
 
 class HabitList extends Component {
+  componentWillMount() {
+    window.addEventListener('resize', this.props.handleWindowSizeChange);
+  }
   async componentDidMount() {
     const habits = await axios("http://localhost:8000/api/habits/");
+    /* console.log(habits.data[4].created)
+    console.log(moment(habits.data[4].created)) */
+    //console.log(moment(habits.data[0].created))
+    this.props.handleWindowSizeChange()
     this.props.fetchHabits(habits)
   }
 
@@ -28,13 +36,18 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchHabits: async (habits) => {
-      console.log(habits)
+    fetchHabits: (habits) => {
       dispatch({
         type: "FETCH_HABITS",
         data: habits
       });
     },
+    handleWindowSizeChange: () => {
+      dispatch({
+        "type": "SET_CURRENT_SCREENSIZE",
+        "data": window.innerWidth
+      })
+    }
   }
 };
 

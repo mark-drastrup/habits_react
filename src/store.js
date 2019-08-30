@@ -55,12 +55,30 @@ const goBack = data => {
   return newAction
 }
 
+const changeStatsView = data => {
+  const newAction = {
+    type: "CHANGE_STATS_VIEW",
+    data: data
+  }
+  return newAction
+}
+
+const setCurrentScreensize = data => {
+  const newAction = {
+    type: "SET_CURRENT_SCREENSIZE",
+    data: data
+  }
+  return newAction
+}
+
 const initialState = {
   allHabits: [],
   activeView: "habitList",
   interval: "",
   color: "",
-  inputValue: ""
+  inputValue: "",
+  statsView: "daily",
+  windowSize: ""
 }
 
 const reducer = (state = initialState, action) => {
@@ -101,6 +119,20 @@ const reducer = (state = initialState, action) => {
     case "GO_BACK": {
       const copiedState = Object.assign({}, state);
       copiedState.activeView = "habitList";
+      return copiedState;
+    }
+    case "CHANGE_STATS_VIEW": {
+      const copiedState = Object.assign({}, state);
+      copiedState.statsView = action.data;
+      return copiedState;
+    }
+    case "SET_CURRENT_SCREENSIZE": {
+      const copiedState = Object.assign({}, state);
+      if (action.data <= 768) {
+        copiedState.windowSize = "mobile"
+      } else {
+        copiedState.windowSize = "desktop"
+      }
       return copiedState;
     }
     default: {

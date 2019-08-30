@@ -7,8 +7,10 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div className="col-12 navbar d-flex justify-content-center">
-        <FaPlus className="navbar__addBtn" onClick={() => this.props.changeView("newHabit")}></FaPlus>
+      <div className="col-12 navbar d-flex justify-content-around">
+        <span className="navbar__menuitem" onClick={() => this.props.changeView("habitList")}>List</span>
+        <FaPlus className="navbar__menuitem" onClick={() => this.props.changeView("newHabit")}></FaPlus>
+        <span className="navbar__menuitem" onClick={() => this.props.changeView("stats")}>Stats</span>
       </div>
     );
 

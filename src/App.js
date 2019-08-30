@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import HabitList from "./components/HabitList"
 import NewHabit from "./components/NewHabit"
 import Navbar from "./components/Navbar"
+import Stats from "./components/Stats"
 
 class App extends Component {
   render() {
@@ -11,11 +12,9 @@ class App extends Component {
       <div className="App">
         <div className="container-fluid p-0 d-flex flex-column justify-content-between h-100">
           <div className="row no-gutters h-100">
-            {this.props.activeView === "habitList" ?
-              <HabitList></HabitList>
-              :
-              <NewHabit></NewHabit>
-            }
+            {this.props.activeView === "habitList" && <HabitList></HabitList>}
+            {this.props.activeView === "newHabit" && <NewHabit></NewHabit>}
+            {this.props.activeView === "stats" && <Stats></Stats>}
           </div>
           <div className="row no-gutters">
             <Navbar></Navbar>
