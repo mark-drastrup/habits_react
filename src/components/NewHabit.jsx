@@ -12,8 +12,8 @@ class NewHabit extends Component {
       consecutive: 0,
       total: 1,
       interval: this.props.interval,
-      created: moment(new Date()).add(2, 'weeks'),
-      updated: moment()
+      created: moment().subtract(2, 'days'),
+      updated: moment().subtract(2, 'days')
     });
     this.props.resetValues();
   }

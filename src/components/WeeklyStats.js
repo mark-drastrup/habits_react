@@ -7,40 +7,41 @@ import "../index.css"
 class WeeklyStats extends Component {
 
   render() {
-    const dailyHabits = this.props.allHabits.filter(habit => habit.interval === "weekly");
+    const weeklyHabits = this.props.allHabits.filter(habit => habit.interval === "weekly");
     const today = moment();
-    const dailyCharts = dailyHabits.map(habit => {
+    const weeklyCharts = weeklyHabits.map(habit => {
       const startDate = moment(habit.created);
-      console.log(startDate)
       const difference = startDate.diff(today, "weeks")
-      console.log("This is difference", difference)
       return (
-        <Doughnut
-          key={habit.id}
-          data={{
-            labels: [
-              'Habits done',
-              'Total Weeks',
-            ],
-            datasets: [{
-              data: [difference, habit.total + 1],
-              backgroundColor: [
-                '#61bd68',
-                '#1981bb',
+        <div className="chart" key={habit.id}>
+          <h3 className="chart__title">{habit.name}</h3>
+          <Doughnut
+            key={habit.id}
+            data={{
+              labels: [
+                'Habits done',
+                'Total Weeks',
               ],
-              hoverBackgroundColor: [
-                '#61bd68',
-                '#1981bb',
-              ]
-            }]
-          }}
-        >
-        </Doughnut>
+              datasets: [{
+                data: [difference, habit.total + 1],
+                backgroundColor: [
+                  '#61bd68',
+                  '#1981bb',
+                ],
+                hoverBackgroundColor: [
+                  '#61bd68',
+                  '#1981bb',
+                ]
+              }]
+            }}
+          >
+          </Doughnut>
+        </div>
       )
     })
     return (
       <>
-        {dailyCharts}
+        {weeklyCharts}
       </>
     );
 

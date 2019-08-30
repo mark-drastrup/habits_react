@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import DailyStats from "./DailyStats"
 import WeeklyStats from "./WeeklyStats"
+import MonthlyStats from "./MonthlyStats"
 import "../index.css"
 
 class Stats extends Component {
@@ -16,6 +17,7 @@ class Stats extends Component {
         <div className="stats__content d-flex flex-column justify-content-center">
           {this.props.statsView === "daily" && <DailyStats></DailyStats>}
           {this.props.statsView === "weekly" && <WeeklyStats></WeeklyStats>}
+          {this.props.statsView === "monthly" && <MonthlyStats></MonthlyStats>}
         </div>
       </div>
     );

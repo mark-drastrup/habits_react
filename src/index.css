@@ -25,6 +25,13 @@ body {
   opacity: 0.9  ;
 }
 
+.habit__icon {
+  font-size: 25px;
+  color: white;
+  opacity: 0.9;
+  margin-right: 15px;
+}
+
 .navbar {
   background-color: #3aa7cd;
   height: 50px;
@@ -167,3 +174,12 @@ body {
 .stats__content {
   flex:12;
 }
+
+.chart {
+  margin-bottom: 50px;
+}
+
+.chart__title {
+  color: white
+}
+
